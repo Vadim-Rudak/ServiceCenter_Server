@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Добавление теста</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/modals/">
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Favicons -->
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/5.1/examples/modals/modals.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="modal modal-signin position-static d-block" style="background: #6441A5" tabindex="-1" role="dialog" id="modalSignin" >
+    <div class="modal-dialog" role="document" style="margin-top: 200px; margin-bottom: 200px">
+        <div class="modal-content rounded-5 shadow">
+            <div class="modal-header p-5 pb-4 border-bottom-0">
+                <!-- <h5 class="modal-title">Modal title</h5> -->
+                <h2 class="fw-bold mb-0">Обновление информации о клиенте</h2>
+            </div>
+            {{#clients}}
+                <div class="modal-body p-5 pt-0">
+                    <form name="details" action="/UpdateClient2" method="post">
+
+                        <div class="form-floating mb-3">
+                            <input type="hidden" name="infoclient_id" value="{{infoclient_id}}">
+                            <input type="text" value="{{surname}}" name="surname" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput">Фамилия:</label>
+                            {{#surnameError}}
+                                <a style="color: #BC0003">{{surnameError}}</a>
+                            {{/surnameError}}
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" value="{{name}}" name="name" class="form-control rounded-4" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Имя:</label>
+                            {{#nameError}}
+                                <a style="color: #BC0003">{{nameError}}</a>
+                            {{/nameError}}
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" value="{{patronymic}}" name="patronymic" class="form-control rounded-4" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Отчество:</label>
+                            {{#patronymicError}}
+                                <a style="color: #BC0003">{{patronymicError}}</a>
+                            {{/patronymicError}}
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" value="{{address}}" name="address" class="form-control rounded-4" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Адрес:</label>
+                            {{#addressError}}
+                                <a style="color: #BC0003">{{addressError}}</a>
+                            {{/addressError}}
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="number" {{#phone_number}}value="{{phone_number}}"{{/phone_number}} name="phone_number" class="form-control rounded-4" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Номер телефона:</label>
+                            {{#phone_numberError}}
+                                <a style="color: #BC0003">{{phone_numberError}}</a>
+                            {{/phone_numberError}}
+                        </div>
+                        <button class="w-100 mb-2 btn btn-lg rounded-4 btn-primary" style="background-color: #6441A5" type="submit">Обновить</button>
+                    </form>
+                </div>
+            {{/clients}}
+        </div>
+    </div>
+</div>
+</body>
+</html>

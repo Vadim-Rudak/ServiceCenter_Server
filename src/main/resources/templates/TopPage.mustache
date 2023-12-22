@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Headers · Bootstrap v5.1</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/headers/">
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="gs://qwez-96c2f.appspot.com/ic_launcher.png" sizes="180x180">
+    <link rel="icon" href="gs://qwez-96c2f.appspot.com/ic_launcher.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="gs://qwez-96c2f.appspot.com/ic_launcher.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="https://getbootstrap.com/docs/5.1/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="gs://qwez-96c2f.appspot.com/ic_launcher.png">
+    <link rel="icon" href="gs://qwez-96c2f.appspot.com/ic_launcher.png">
+    <meta name="theme-color" content="#7952b3">
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/5.1/examples/sign-in/headers.css" rel="stylesheet">
+
+    <header class="p-3 text-white" style="background-color: #6441A5">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="/menu" style="color: #ffffff;text-decoration: none;margin-right: 10px">Формирвание заказа</a></li>
+                    <li><a href="/custumer" style="color: #ffffff;text-decoration: none;margin-right: 10px">Данные о клиентах</a></li>
+                    <li><a href="/Parts" style="color: #ffffff;text-decoration: none;margin-right: 10px">Все детали</a></li>
+                </ul>
+
+                <div class="text-end">
+                    <button type="button" class="btn btn-outline-light me-2"><a href="/logout" style="color: #ffffff;text-decoration: none">Выход</a></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+</head>
+<body>
+<div class="btn_add_book">
+    <button type="button" class="btn btn-primary" style="float: right;background-color: rgba(100,65,165,0.66); margin-top: 8px;margin-right: 8px"><a href="/PageAdd" style="color: #ffffff;text-decoration: none" >Добавить заказ</a></button>
+</div>
+
+<div>
+    <div class="bd-example">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Название изделия</th>
+                <th scope="col">Дата получения</th>
+                <th scope="col">Стоимость ремонта</th>
+                <th scope="col">Гарантия</th>
+                <th scope="col">ФИО</th>
+                <th scope="col">Статус</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+
+                {{#order}}
+                    <tr>
+                        <th scope="row">{{id}}</th>
+                        <td>{{name_ord}}</td>
+                        <td>{{date_add_ord}}</td>
+                        <td>{{price}}</td>
+                        <td><a href="/PageInfoWarranty?id={{warranty_id}}" style="color: #6441A5;text-decoration: none">{{warranty.warranty}}</a></td>
+                        <td><a href="/PageInfoClient?id={{infoclient_id}}" style="color: #6441A5;text-decoration: none">{{client.surname}} {{client.name}} {{client.patronymic}}</a></td>
+                        <td>{{status.info_status}}</td>
+                        <td><a  href="/PageInfoWork?id={{id}}" style="color: #6441A5;text-decoration: none"/><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+                        </svg></td>
+                        <td><a  href="/PartsOrd?id={{id}}" style="color: #6441A5;text-decoration: none"/><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tools" viewBox="0 0 16 16">
+                            <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.356 3.356a1 1 0 0 0 1.414 0l1.586-1.586a1 1 0 0 0 0-1.414l-3.356-3.356a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0zm9.646 10.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708zM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11z"/>
+                        </svg></td>
+                        <td><a  href="/UpdateOrd?id={{id}}" style="color: #6441A5;text-decoration: none"/><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                        </svg></td>
+                        <td><a class="del"  href="/DeleteOrd?id={{id}}" style="color: #BC0003;text-decoration: none"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                        </svg></td>
+                    </tr>
+                {{/order}}
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

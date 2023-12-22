@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Регистрация</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Favicons -->
+
+    <link rel="manifest" href="https://getbootstrap.com/docs/5.1/assets/img/favicons/manifest.json">
+   <meta name="theme-color" content="#7952b3">
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/5.1/examples/sign-in/signin.css" rel="stylesheet">
+</head>
+<body class="text-center">
+
+<main class="form-signin">
+    <form action="/reg" method="post">
+        <h1 class="h3 mb-3 fw-normal" style="color: #6441A5">Регистрация нового пользователя</h1>
+
+        <div class="form-floating">
+            <input type="text" name="name" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput" style="color: #27425e">Введите имя</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword" style="color: #27425e">Введите пароль</label>
+        </div>
+
+        <div class="checkbox mb-3">
+            <!--            <label>-->
+            <!--                <input type="checkbox" value="remember-me"> Remember me-->
+            <!--            </label>-->
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" style="background-color:#6441A5" type="submit">Зарегистрироваться</button>
+        <p class="mt-5 mb-3 text-muted"><a style="color: #6441A5"></a></p>
+    </form>
+</main>
+</body>
+</html>

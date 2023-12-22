@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Добавление теста</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/modals/">
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Favicons -->
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/5.1/examples/modals/modals.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="modal modal-signin position-static d-block" style="background: #6441A5" tabindex="-1" role="dialog" id="modalSignin" >
+    <div class="modal-dialog" role="document" style="margin-top: 66px; margin-bottom: 66px">
+        <div class="modal-content rounded-5 shadow">
+            <div class="modal-header p-5 pb-4 border-bottom-0">
+                <!-- <h5 class="modal-title">Modal title</h5> -->
+                <h2 class="fw-bold mb-0">Добавление заказа</h2>
+            </div>
+
+                <div class="modal-body p-5 pt-0">
+                    <form name="ord" action="/AddOrd" method="post">
+
+                        <div class="form-floating mb-3">
+
+                            <input type="text" {{#ord.name_ord}}value="{{ord.name_ord}}"{{/ord.name_ord}} name="name_ord" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput">Название изделия:</label>
+                            {{#name_ordError}}
+                                <a style="color: #BC0003">{{name_ordError}}</a>
+                            {{/name_ordError}}
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="date" {{#ord.date_add_ord}}value="{{ord.date_add_ord}}"{{/ord.date_add_ord}} name="date_add_ord" class="form-control rounded-4" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Дата получения</label>
+                            {{#date_add_ordError}}
+                                <a style="color: #BC0003">{{date_add_ordError}}</a>
+                            {{/date_add_ordError}}
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="number" {{#ord.price}}value="{{ord.price}}"{{/ord.price}} value="price" name="price" class="form-control rounded-4" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Стоимость ремонта</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" {{#ord.breakdown_info}}value="{{ord.breakdown_info}}"{{/ord.breakdown_info}} name="breakdown_info" class="form-control rounded-4" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Информация о поломке</label>
+                            {{#breakdown_infoError}}
+                                <a style="color: #BC0003">{{breakdown_infoError}}</a>
+                            {{/breakdown_infoError}}
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" {{#ord.status.info_status}}value="{{ord.status.info_status}}"{{/ord.status.info_status}} name="status.info_status" class="form-control rounded-4" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Статус ремонта</label>
+                            {{#info_statusError}}
+                                <a style="color: #BC0003">{{info_statusError}}</a>
+                            {{/info_statusError}}
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" {{#ord.warranty.warranty}}value="{{ord.warranty.warranty}}"{{/ord.warranty.warranty}} name="warranty.warranty" class="form-control rounded-4" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Гарантия</label>
+                            {{#warrantyError}}
+                                <a style="color: #BC0003">{{warrantyError}}</a>
+                            {{/warrantyError}}
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="date" {{#ord.warranty.date_add}}value="{{ord.warranty.date_add}}"{{/ord.warranty.date_add}} value="warranty.date_add" name="warranty.date_add" class="form-control rounded-4" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Дата добавления гарантии</label>
+                            {{#date_addError}}
+                                <a style="color: #BC0003">{{date_addError}}</a>
+                            {{/date_addError}}
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" {{#ord.warranty.validity}}value="{{ord.warranty.validity}}"{{/ord.warranty.validity}} name="warranty.validity" class="form-control rounded-4" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Срок действия</label>
+                            {{#validityError}}
+                                <a style="color: #BC0003">{{validityError}}</a>
+                            {{/validityError}}
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" {{#ord.client.surname}}value="{{ord.client.surname}}"{{/ord.client.surname}} name="client.surname" class="form-control rounded-4" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Фамилия</label>
+                            {{#surnameError}}
+                                <a style="color: #BC0003">{{surnameError}}</a>
+                            {{/surnameError}}
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" {{#ord.client.name}}value="{{ord.client.name}}"{{/ord.client.name}} name="client.name" class="form-control rounded-4" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Имя</label>
+                            {{#nameError}}
+                                <a style="color: #BC0003">{{nameError}}</a>
+                            {{/nameError}}
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" {{#ord.client.patronymic}}value="{{ord.client.patronymic}}"{{/ord.client.patronymic}} name="client.patronymic" class="form-control rounded-4" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Отчество</label>
+                            {{#patronymicError}}
+                                <a style="color: #BC0003">{{patronymicError}}</a>
+                            {{/patronymicError}}
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" {{#ord.client.address}}value="{{ord.client.address}}"{{/ord.client.address}} name="client.address" class="form-control rounded-4" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Адрес</label>
+                            {{#addressError}}
+                                <a style="color: #BC0003">{{addressError}}</a>
+                            {{/addressError}}
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="number" {{#ord.client.phone_number}}value="{{ord.client.phone_number}}"{{/ord.client.phone_number}} name="client.phone_number" class="form-control rounded-4" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Телефон</label>
+                        </div>
+                        {{#phone_numberError}}
+                            <a style="color: #BC0003">{{phone_numberError}}</a>
+                        {{/phone_numberError}}
+                        <button class="w-100 mb-2 btn btn-lg rounded-4 btn-primary" style="background-color: #6441A5" type="submit">Добавить</button>
+                    </form>
+                </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
